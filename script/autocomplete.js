@@ -41,7 +41,6 @@ app.directive('autocomplete', function() {
 
       // starts autocompleting on typing in something
       $scope.$watch('searchParam', function(newValue, oldValue){
-
         if (oldValue === newValue || (!oldValue && $scope.initLock)) {
           return;
         }
@@ -244,6 +243,7 @@ app.directive('autocomplete', function() {
           <input\
             type="text"\
             ng-model="searchParam"\
+            ng-trim="false"\
             placeholder="{{ attrs.placeholder }}"\
             class="{{ attrs.inputclass }}"\
             id="{{ attrs.inputid }}"/>\
