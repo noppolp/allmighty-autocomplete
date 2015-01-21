@@ -11,7 +11,7 @@ app.directive('autocomplete', function() {
       searchParam: '=ngModel',
       suggestions: '=data',
       onType: '=onType',
-      onSelect: '=onSelect'
+      onSelect: '&onSelect'
     },
     controller: ['$scope', function($scope){
       // the index of the suggestions that's currently selected
@@ -80,13 +80,11 @@ app.directive('autocomplete', function() {
 
       // selecting a suggestion with RIGHT ARROW or ENTER
       $scope.select = function(suggestion){
-        console.log('suggestion: ' + suggestion);
         if(suggestion){
           $scope.searchParam = suggestion;
           $scope.searchFilter = suggestion;
           if($scope.onSelect){
-            console.log('suggestion in if: ' + suggestion);
-            $scope.onSelect(suggestion);
+            $scope.onSelect({message:suggestion});
           }
         }
         watching = false;
