@@ -80,11 +80,14 @@ app.directive('autocomplete', function() {
 
       // selecting a suggestion with RIGHT ARROW or ENTER
       $scope.select = function(suggestion){
+        console.log('suggestion: ' + suggestion);
         if(suggestion){
           $scope.searchParam = suggestion;
           $scope.searchFilter = suggestion;
-          if($scope.onSelect)
+          if($scope.onSelect){
+            console.log('suggestion in if: ' + suggestion);
             $scope.onSelect(suggestion);
+          }
         }
         watching = false;
         $scope.completing = false;
