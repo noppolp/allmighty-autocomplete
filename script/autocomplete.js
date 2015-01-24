@@ -246,6 +246,7 @@ app.directive('autocomplete', function() {
             ng-model="searchParam"\
             ng-trim="false"\
             placeholder="{{ attrs.placeholder }}"\
+            name="{{ attrs.name }}"\
             class="{{ attrs.inputclass }}"\
             id="{{ attrs.inputid }}"/>\
           <ul ng-show="completing && suggestions.length>0">\
