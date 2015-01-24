@@ -248,7 +248,7 @@ app.directive('autocomplete', function() {
             placeholder="{{ attrs.placeholder }}"\
             name="{{ attrs.name }}"\
             class="{{ attrs.inputclass }}"\
-            id="{{ attrs.inputid }}" ng-required="{{attrs.required}}"/>\
+            id="{{ attrs.inputid }}"/>\
           <ul ng-show="completing && suggestions.length>0">\
             <li\
               suggestion\
